@@ -1,0 +1,437 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+
+.navtext{
+    color:cyan;
+}
+#navtext1 {
+    color:cyan;
+    font-family: "Roboto";
+    margin-right: 13px; 
+
+}
+
+#navtext2 {
+    color:cyan;
+    font-family: "Roboto";
+    margin-right: 13px;
+}
+
+#navtext3 {
+    color:cyan;
+    font-family: "Roboto";
+    margin-right: 13px;
+
+}
+#navtext5 {
+    color:cyan;
+    font-family: "Roboto";
+    margin-right: 13px;
+
+}
+#navtext4 {
+    color:cyan;
+    font-family: "Roboto";
+    margin-right: 13px;
+
+}
+#navtext6 {
+    color:cyan;
+    font-family: "Roboto";
+    margin-right: 13px;
+
+}
+#navtext7 {
+    color:cyan;
+    font-family: "Roboto";
+    margin-right: 13px;
+
+}
+#navtext8 {
+    color:cyan;
+    font-family: "Roboto";
+    margin-right: 13px;
+
+}
+
+.navmargin{
+    margin-left: auto;    
+}
+
+.ordernow{
+    color:cyan;
+}
+
+.img12{
+    height: 450px;
+    width: 550px;
+}
+.button1{
+    margin-right: 10px;
+}
+.button2{
+    margin-right: 5px;
+    background-color: white;
+    color: black;
+}
+.button3{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.dropbtn {
+  background-color:transparent;
+  color: cyan;
+  padding-top: 5px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:#343a40;
+  min-width: 100px;
+  margin-top: 2px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.navtextel:hover{
+    color: green;
+    transform:scale(1.1);
+}
+#navtext1:hover{
+    color: green;
+}
+#navtext2:hover{
+    color: green;
+}
+#navtext3:hover{
+    color: green;
+}
+#navtext4:hover{
+    color: green;
+}
+#navtext5:hover{
+    color: green;
+}
+#navtext6:hover{
+    color: green;
+}
+#navtext7:hover{
+    color: green;
+}
+#navtext8:hover{
+    color: green;
+}
+#navtext9:hover{
+    color: green;
+}
+#navtextel1:hover{
+    color: green;
+}
+#navtextel2:hover{
+    color: green;
+}
+
+.dropdown-content a:hover {color:green;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color:transparent;}
+
+
+
+.imgdim{
+    height: 100vh;
+    width: 100vh;
+    background-size: cover;
+}
+
+.carousel-caption{
+    bottom: 200px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.carousel-item::before{
+    content:"";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.7;
+}
+
+.cch{
+    font-family: cursive;
+    font-size: 75px;
+    font-weight: 700;
+}
+.cch1{
+    font-family: cursive;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+
+
+
+.bg-container{
+    background-color: lightgray;
+}
+.wcu-section {
+    background-color: #f9fbfe;
+}
+
+.wcu-section-heading {
+    color: #183b56;
+    font-family: "Roboto";
+    font-size: 35px;
+}
+
+.wcu-section-paragraph {
+    color: #5a7184;
+    font-family: "Roboto";
+    font-size: 13px;
+
+}
+
+.wcu-section-card {
+    background-color: white;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #e5eaf4;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+}
+
+.wcu-section-card-heading {
+    font-family: "Roboto";
+    color: #183b56;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.wcu-section-card-para {
+    font-family: "Roboto";
+    color: #5a7184;
+    font-size: 15px;
+}
+
+.offer {
+    color: red;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.explore-menu {
+    background-color: white;
+}
+
+.explore-menu-heading {
+    font-family: "Roboto";
+    color: #183b56;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.explore-menu-card-image {
+    width: 100%;
+    border-radius: 16px;
+}
+
+.explore-menu-card-heading {
+    font-family: "Roboto";
+    font-size: 20px;
+    margin-top: 24px;
+    color: #323f4b;
+    font-weight: 500;
+}
+
+.explore-menu-card-para {
+    color: #d0b200;
+    font-size: 18px;
+    font-family: "Roboto";
+    font-weight: 500;
+}
+
+.explore-menu-card {
+    padding: 15px;
+    border-radius: 16px;
+}
+
+.healthy-food-section {
+    width: 270px;
+}
+
+.healthy-food-heading {
+    color: #183b56;
+    font-family: "Roboto";
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.healthy-food-section-container {
+    background-color: #f9fbfe;
+}
+
+.healthy-food-para {
+    font-family: "Roboto";
+    color: #5a7184;
+    font-size: 16px;
+}
+
+.healthy-food-button {
+    color: white;
+    background-color: #d0b200;
+    border-width: 0px;
+    border-radius: 16px;
+    height: 45px;
+    width: 130px;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.payment-card-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 28px;
+}
+
+.delivery-payment-section {
+    background-color: #f9fbfe;
+}
+
+.thanking-customers-section {
+    background-color: #d0b2001a;
+}
+
+.thanking-customers-section-heading {
+    color: #183b56;
+    font-family: "Roboto";
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.thanking-customers-section-description {
+    color: #5a7184;
+    font-family: "Roboto";
+    font-size: 16px;
+}
+
+.thanking-customers-section-img {
+    width: 270px;
+    margin-bottom: 20px;
+}
+
+.custom-button {
+    color: white;
+    background-color: #d0b200;
+    width: 130px;
+    height: 45px;
+    border-width: 0;
+    border-radius: 8px;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.searchStyle{
+    height: 35px;
+    width: 350px;
+    padding: 5px;
+    text-align: center;
+    font-family: "roboto";
+    border-radius: 20px;
+}
+.btnStyle{
+    color: cyan;
+    background-color: transparent;
+    border-style: solid;
+    border-color: cyan;
+    border-width: 0px;
+}
+
+.itemCard{
+    text-align: center;
+    padding: 25px;
+    border-style: solid;
+    border-radius: 25px;
+    border-width: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.img12{
+    height: 150px;
+    width: 150px;
+    border-radius: 12px;
+}
+
+.pitem{
+    font-family: "roboto";
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.bgcontainerEl{
+    background-color:lightcyan;
+}
+
+.billcontainer{
+    background-color: aliceblue;
+    height: 100vh;
+    text-align: end;
+    padding: 25px;
+}
+
+.itemcontainer{
+    font-family: "roboto";
+    font-size: 15px;
+    color: tomato;
+}
+
+.pElement{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-transform: capitalize;
+}
+
+.bgCol{
+    background-color: brown;
+    height: 4vh;
+}
+
+
+.h5Element{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: "";
+}
+
+#cardDesign:hover{
+    background-color: grey; 
+    color: white;
+    border-radius: 25px;  
+}

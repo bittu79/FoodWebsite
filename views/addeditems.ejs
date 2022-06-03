@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/foodmunch.css">
+</head>
+<body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-8" style="height: 100vh;overflow-y: scroll;">
+            <% for (var i =0; i < data.length;  i++ ) { %>
+                <br/>  
+                
+                <div class="col-12"">
+                      <div class="itemCard shadow d-flex flex-row">
+                        <div class="col-4">
+                          <img class="img12" src= <%= data[i].img %>>        
+                        </div>
+                      <div class="col-8 text-start" style="margin-top: 5px;">
+                        <h5 id="headId"><%= data[i].itemName %></h5>  
+                      <p class="pitem">Price:- <%= data[i].price %></p>      
+                      <p class="pitem">Rating:- <%= data[i].rating %></p>
+                      <a id="id<%= data[i].id %>" class="btn btn-danger text-white" href="http://localhost:3000/deleteitem/?id=<%= data[i].id %>">Delete From Cart</a>  
+                    </div> 
+                      </div>
+                </div>
+                <% } %>
+        </div>
+        <div class="col-4 billcontainer shadow">
+          <a class="text-success" style="font-size: 25px;font-family: cursive;font-weight: bold;">Billing Area</a>
+            <div class="text-end">
+              <% for (var i =0; i < data.length;  i++ ) { %>
+                <br/> 
+                <a style="color: red;font-family: 'Times New Roman', Times, serif;font-size: 17px;"><%= data[i].itemName %> ----</a>
+                <a style="color:blueviolet;font-family: 'Times New Roman', Times, serif;font-size: 20px;">Rs.<%= data[i].price %></a>  
+            <% } %>
+            <% var k = 0 %>
+            <% for (var i =0; i < data.length;  i++ ) { %>
+                    <% k = k + parseInt(data[i].price) %>
+            <% } %>
+            <br/>
+            <a style="color: cyan;">---------------------------------------------------------------</a>
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" onclick="offer()">
+            <label for="vehicle1">50% off</label><br>
+            <h4 class="text-secondary" id="tprice">Total Price:- <%= k%></h4>
+            <a href="http://localhost:3000/orderplaced" class="btn btn-danger text-white" style="padding-left: 30px;padding-right:30px;border-radius: 25px;">Order</a>
+            </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var a = document.getElementById("tprice")
+      var checkBox = document.getElementById("vehicle1")
+      function offer(){
+        if (checkBox.checked === true){
+          a.innerHTML = "Total Price:- "+ parseInt('<%= k %>')/2;
+        }
+        else{
+          a.innerHTML = "Total Price:- "+  '<%= k %>';
+
+        }
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="javascript/sd.js"></script>
+  </body>
+</html>

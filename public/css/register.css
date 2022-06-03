@@ -1,0 +1,39 @@
+
+.re1{
+    background-color:green;
+}
+
+.card1{
+    background-color: transparent;
+    border-width: 2px;
+    border-style: solid;
+    border-color: aqua;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+}
+hr{
+    border-width: 1px;
+    border-style: solid;
+    border-color: white;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"]{
+    width: 100%;
+    padding: 3px;
+    margin: 5px 0 5px 0;
+    display: inline-block;
+    border: none;
+}
+
+.errMsg{
+    background-color: red;
+    color: black;
+    font-family: "Roboto";
+    font-size: 15px;
+    margin-left: 10px;
+}
