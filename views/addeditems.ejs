@@ -34,7 +34,7 @@
                 </div>
                 <% } %>
         </div>
-        <div class="col-4 billcontainer shadow">
+        <div class="col-4 billcontainer shadow" style="height: 100vh;overflow-y: scroll;">
           <a class="text-success" style="font-size: 25px;font-family: cursive;font-weight: bold;">Billing Area</a>
             <div class="text-end">
               <% for (var i =0; i < data.length;  i++ ) { %>
@@ -48,8 +48,17 @@
             <% } %>
             <br/>
             <a style="color: cyan;">---------------------------------------------------------------</a>
-            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" onclick="offer()">
-            <label for="vehicle1">50% off</label><br>
+            <input type="checkbox" id="item1" name="item1" value="item" onclick="offer()">
+            <label for="item1">50% off</label><br>
+            <label style="color: red;">Delivery Address:- </label>
+            <p><%= data2.address %></p>
+            <input type="checkbox" id="address" name="address" value="address" onclick="address()">
+            <label for="address" style="color: red;">Edit Address</label><br>
+            <form action="/addressPage" method="post" style="display:none" id="addressid">
+              <textarea cols="30" rows="5" id="address2" name="address2" value="address2"></textarea>
+              <br>
+              <button class="btn btn-primary"  type="submit">submit</button>
+            </form>
             <h4 class="text-secondary" id="tprice">Total Price:- <%= k%></h4>
             <a href="http://localhost:3000/orderplaced" class="btn btn-danger text-white" style="padding-left: 30px;padding-right:30px;border-radius: 25px;">Order</a>
             </div>
@@ -58,7 +67,7 @@
     </div>
     <script>
       var a = document.getElementById("tprice")
-      var checkBox = document.getElementById("vehicle1")
+      var checkBox = document.getElementById("item1")
       function offer(){
         if (checkBox.checked === true){
           a.innerHTML = "Total Price:- "+ parseInt('<%= k %>')/2;
@@ -66,6 +75,16 @@
         else{
           a.innerHTML = "Total Price:- "+  '<%= k %>';
 
+        }
+      }
+      var a1 = document.getElementById("address");
+      var a2 = document.getElementById("addressid");
+      function address(){
+        if (a1.checked === true){
+          a2.style.display = "block";
+        }
+        else{
+          a2.style.display = "none";
         }
       }
     </script>

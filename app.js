@@ -362,11 +362,20 @@ app.get("/mycart",async (request,response)=>{
                                 userid = ${bt}
                 `
         const dhUser = await db.all(uQuery);
+        const uy = `
+                        SELECT
+                                *
+                        FROM 
+                                userDetails
+                        WHERE
+                                id = ${bt}
+                `
+        const dr = await db.get(uy);
         if (dhUser.length === 0){
         response.render("myorder2",{data1:dhUser,data2:"images/cart1.jpg"});
         }
         else{
-                response.render("myorders",{data:dhUser,data1:dhUser});    
+                response.render("myorders",{data:dhUser,data1:dhUser,data2:dr});    
         }
 })
 
@@ -380,6 +389,15 @@ app.get("/orderplaced",async (request,response)=>{
                                 userid = ${bt}
                 `
         const dhUser = await db.all(userQuery);
+        const uy = `
+                        SELECT
+                                *
+                        FROM 
+                                userDetails
+                        WHERE
+                                id = ${bt}
+                `
+        const dr = await db.get(uy);
         const uQuery = `
                         DELETE FROM buyitem
                         WHERE name IN ("non veg","veg","Desserts") AND userid = ${bt}
@@ -389,9 +407,9 @@ app.get("/orderplaced",async (request,response)=>{
                 let d = new Date();
                 const qQuery = `
         INSERT INTO orderitem (
-                name,itemName,price,rating,img,dtime,userid
+                name,itemName,price,rating,img,dtime,userid,address
         )
-        VALUES ('${dhUser[i].name}','${dhUser[i].itemName}',${dhUser[i].price},${dhUser[i].rating},'${dhUser[i].img}','${d}',${bt})
+        VALUES ('${dhUser[i].name}','${dhUser[i].itemName}',${dhUser[i].price},${dhUser[i].rating},'${dhUser[i].img}','${d}',${bt},'${dr.address}')
         `
         const dUser = await db.run(qQuery);
               }
@@ -421,3 +439,37 @@ app.get("/orderhistory",async (request,response)=>{
         const dbUser = await db.all(userQuery);
         response.render("orderhistory",{data:dhUser,data1:dbUser});
 })
+
+app.post("/addressPage",async (request,response)=>{
+        const {address2} = request.body;
+        const uQuery = `
+        SELECT
+                *
+        FROM 
+                buyitem
+        WHERE 
+                userid = ${bt}
+`
+        const dhUser = await db.all(uQuery);
+        const userQuery = `
+                UPDATE userDetails
+                SET 
+                        address = '${address2}'
+                WHERE 
+                        id  = ${bt}
+        `
+        const dbUser = await db.get(userQuery);
+        const uy = `
+                        SELECT
+                                *
+                        FROM 
+                                userDetails
+                        WHERE
+                                id = ${bt}
+                `
+        const dr = await db.get(uy);
+        response.render("myorders",{data:dhUser,data1:dhUser,data2:dr});
+
+});
+
+
